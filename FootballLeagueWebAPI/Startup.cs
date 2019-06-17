@@ -22,7 +22,7 @@ namespace FootballLeagueWebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LeagueContext>(opt => opt.UseInMemoryDatabase("LeagueDatabase"));
+            services.AddDbContext<LeagueContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddTransient<MatchRepository>();
             services.AddTransient<TeamRepository>();
             services.AddTransient<PlayerRepositiory>();

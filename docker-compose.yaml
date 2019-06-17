@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  league-db:
+    image: nwazwa
+    ports:
+      - '1433:1433'
+    networks:
+      - league-net
+    enviroment:
+      SA_PASSWORD: ""
+      ACCEPT_EULA: "Y"
+
+  league-webapi:
+    build: .
+    ports:
+      - '5000:5000'
+    networks:
+      - league-net
+
+networks:
+  league-net:
+    driver: bridge
