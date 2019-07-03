@@ -4,6 +4,7 @@ namespace FootballLeagueWebAPI.DTO
 {
     public class MatchDTO
     {
+        public int Id { get; set; }
         public string HomeTeamName { get; set; }
         public string HomeTeamCity { get; set; }
         public string GuestTeamName { get; set; }

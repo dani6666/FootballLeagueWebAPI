@@ -33,7 +33,7 @@ namespace FootballLeagueWebAPI.Repositories
                 .ToList();
         }
 
-        public void AddMatchPlayed(int teamId, Match match, bool? wasWon, bool wasAtHome)
+        public virtual void AddMatchPlayed(int teamId, Match match, bool? wasWon, bool wasAtHome)
         {
             Team team = GetById(teamId);
             if(wasWon == true)

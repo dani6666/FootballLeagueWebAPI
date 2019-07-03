@@ -1,5 +1,6 @@
 ﻿using FootballLeagueWebAPI.DTO;
 using FootballLeagueWebAPI.Models;
+using System;
 using System.Collections.Generic;
 
 namespace FootballLeagueWebAPI.Mappings
@@ -20,14 +21,22 @@ namespace FootballLeagueWebAPI.Mappings
 
         public static PlayerDTO Map(this Player player)
         {
-            return new PlayerDTO()
+            try
             {
-                FirstName = player.FirstName,
-                SurName = player.SurName,
-                Age = player.Age,
-                TeamName = player.Team.Name,
-                TeamCity = player.Team.City
-            };
+                return new PlayerDTO()
+                {
+                    Id = player.Id,
+                    FirstName = player.FirstName,
+                    SurName = player.SurName,
+                    Age = player.Age,
+                    TeamName = player.Team.Name,
+                    TeamCity = player.Team.City
+                };
+            }
+            catch(NullReferenceException)
+            {
+                return null;
+            }
         }
     }
 }

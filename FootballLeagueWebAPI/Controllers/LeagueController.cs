@@ -15,10 +15,10 @@ namespace FootballLeagueWebAPI.Controllers
     [ApiController]
     public class LeagueController : Controller
     {
-        private readonly LeagueInputService _inputService;
-        private readonly LeagueOutputService _outputService;
+        private readonly ILeagueInputService _inputService;
+        private readonly ILeagueOutputService _outputService;
 
-        public LeagueController(LeagueInputService inputService, LeagueOutputService outputService)
+        public LeagueController(ILeagueInputService inputService, ILeagueOutputService outputService)
         {
             _inputService = inputService;
             _outputService = outputService;

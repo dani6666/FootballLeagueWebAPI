@@ -26,7 +26,7 @@ namespace FootballLeagueWebAPI.Repositories
             }
         }
 
-        public void Add(T record)
+        public virtual void Add(T record)
         {
             _context.Set<T>().Add(record);
 
@@ -52,6 +52,11 @@ namespace FootballLeagueWebAPI.Repositories
                     .FirstOrDefault());
 
             _context.SaveChanges();
+        }
+
+        public virtual bool IdExists(int id)
+        {
+            return _context.Set<T>().Any(r => r.Id == id);
         }
     }
 }

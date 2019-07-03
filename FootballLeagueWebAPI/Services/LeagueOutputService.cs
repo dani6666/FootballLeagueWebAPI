@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace FootballLeagueWebAPI.Services
 {
-    public class LeagueOutputService
+    public class LeagueOutputService : ILeagueOutputService
     {
         private readonly TeamRepository _teamRepository;
         private readonly PlayerRepositiory _playerRepositiory;

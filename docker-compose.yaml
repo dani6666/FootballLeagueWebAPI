@@ -2,14 +2,11 @@ version: "3"
 
 services:
   league-db:
-    image: nwazwa
+    # image: nazwa
     ports:
       - '1433:1433'
     networks:
       - league-net
-    enviroment:
-      SA_PASSWORD: ""
-      ACCEPT_EULA: "Y"
 
   league-webapi:
     build: .

@@ -26,8 +26,8 @@ namespace FootballLeagueWebAPI
             services.AddTransient<MatchRepository>();
             services.AddTransient<TeamRepository>();
             services.AddTransient<PlayerRepositiory>();
-            services.AddTransient<LeagueInputService>();
-            services.AddTransient<LeagueOutputService>();
+            services.AddTransient<ILeagueInputService, LeagueInputService> ();
+            services.AddTransient<ILeagueOutputService, LeagueOutputService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
